@@ -17,8 +17,12 @@ audio:
 
 stt:
   engine: "whisper"  # whisper 或 azure
-  model: "base"      # tiny, base, small
+  model: "tiny"      # tiny, base, small - tiny 最快
   language: "zh"
+  
+# VAD 录音配置
+vad:
+  max_silence: 30     # 静音帧数（减少可加快结束检测）
   
 tts:
   voice: "zh-CN-XiaoxiaoNeural"  # 女声
@@ -31,6 +35,8 @@ agent:
   cli_path: "C:/Users/fourStar/AppData/Roaming/npm/openclaw.cmd"
   # 语音助手会话 ID
   session_id: "voice-assistant"
+  # Agent 超时时间（秒），减少可加快响应
+  timeout: 15
   # 保留旧配置用于兼容（已不再使用）
   message_file: "C:/Users/fourStar/.openclaw/voice-messages.jsonl"
   

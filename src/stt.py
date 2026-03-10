@@ -96,7 +96,7 @@ class SpeechToText:
             self.logger.info("开始录音...")
             frames = []
             silence_count = 0
-            max_silence = 50  # 连续静音帧数（约1.5秒）
+            max_silence = self.config.get("vad.max_silence", 30)  # 从配置读取，默认30帧（约0.9秒）
             max_frames = int(timeout * 1000 / frame_duration)
             
             stream.start_stream()
