@@ -1,0 +1,10 @@
+pyaudio>=0.2.13
+pvporcupine>=2.2.0
+openai-whisper>=20231117
+edge-tts>=6.1.9
+pygame>=2.5.0
+pyyaml>=6.0.1
+requests>=2.31.0
+numpy>=1.24.0
+soundfile>=0.12.1
+webrtcvad>=2.0.10

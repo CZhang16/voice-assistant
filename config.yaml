@@ -1,0 +1,46 @@
+app:
+  name: "小白"
+  version: "1.0.0"
+
+wake_word:
+  keyword_path: "xiaobai_zh_windows.ppn"
+  keywords: ["小白"]
+  model_path: "porcupine_params_zh.pv"
+  sensitivity: 0.5
+  access_key: "ND4cBEk4Xrf6b/RTLCoj7IAgquzqhw1vQU1cYENMrBSo0OeTKrKqpA=="  # Porcupine access key
+
+audio:
+  input_device: null  # null = 默认设备
+  sample_rate: 16000
+  frame_length: 512
+  channels: 1
+
+stt:
+  engine: "whisper"  # whisper 或 azure
+  model: "base"      # tiny, base, small
+  language: "zh"
+  
+tts:
+  voice: "zh-CN-XiaoxiaoNeural"  # 女声
+  rate: "+0%"
+  volume: "+0%"
+  
+agent:
+  enabled: true
+  # OpenClaw CLI 路径（可选，默认自动查找）
+  cli_path: "C:/Users/fourStar/AppData/Roaming/npm/openclaw.cmd"
+  # 语音助手会话 ID
+  session_id: "voice-assistant"
+  # 保留旧配置用于兼容（已不再使用）
+  message_file: "C:/Users/fourStar/.openclaw/voice-messages.jsonl"
+  
+commands:
+  enabled: true
+  keywords:
+    screen_off: ["熄屏", "关闭屏幕", "关屏"]
+    lock: ["锁屏", "锁定"]
+    task: ["任务", "提醒", "记录"]
+
+logging:
+  level: "INFO"
+  file: "logs/voice-assistant.log"
